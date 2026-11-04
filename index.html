@@ -70,6 +70,11 @@
     .hero-vignette {
       background: linear-gradient(90deg, rgba(22, 26, 32, 0.94) 0%, rgba(22, 26, 32, 0.82) 38%, rgba(22, 26, 32, 0.35) 65%, rgba(22, 26, 32, 0.05) 100%);
     }
+    @media (max-width: 640px) {
+      .hero-vignette {
+        background: linear-gradient(180deg, rgba(22, 26, 32, 0.90) 0%, rgba(22, 26, 32, 0.65) 45%, rgba(22, 26, 32, 0.88) 100%);
+      }
+    }
   </style>
 </head>
 
@@ -170,7 +175,7 @@
       <!-- Full-bleed Official Field Photo of Caminhão Munck Oficial da Elétrica Colombo shifted right -->
       <img src="assets/hero-munck-desktop.jpg"
         alt="Caminhão Munck oficial da Elétrica Colombo com postes de concreto"
-        class="absolute inset-0 w-full h-full object-cover object-right">
+        class="absolute inset-0 w-full h-full object-cover object-[80%_center] sm:object-right">
 
       <!-- Left Dark Gradient Overlay for Crisp Typography Contrast -->
       <div class="hero-vignette absolute inset-0"></div>
@@ -432,7 +437,7 @@
                 <div class="aspect-[4/3] overflow-hidden rounded-[2px] border border-zinc-600 bg-zinc-900 mb-2">
                   <img src="assets/obra-pedagio-rodovia.jpg"
                     alt="Caminhão munck da Elétrica Colombo operando em praça de pedágio e rodovia"
-                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300">
+                    class="w-full h-full object-cover object-[center_bottom] group-hover:scale-105 transition-transform duration-300">
                 </div>
                 <h3 class="font-display font-bold text-xs uppercase tracking-wide text-white leading-tight">
                   RODOVIAS &amp; PEDÁGIOS
