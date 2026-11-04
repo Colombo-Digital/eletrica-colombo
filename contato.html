@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato e Orçamento | Elétrica Colombo - Marília - SP</title>
+  <meta name="description" content="Entre em contato com a Elétrica Colombo. Solicite orçamento para obras elétricas, cabines de força, redes de energia com munck e painéis em Marília e região.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpolygon points='32,4 58,19 58,45 32,60 6,45 6,19' fill='%231E2329' stroke='%23009B4D' stroke-width='4'/%3E%3Cpath d='M35 12L19 34h12l-4 18 18-22H33l2-18z' fill='%23F7B500'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Barlow Condensed & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Barlow Condensed"', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            colombo: {
+              dark: '#22272E',
+              darker: '#1A1E24',
+              green: '#009B4D',
+              greenHover: '#00803F',
+              yellow: '#F7B500',
+              yellowHover: '#E0A300',
+              light: '#F4F5F7',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .header-cta-slant {
+      clip-path: polygon(22px 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    @media (max-width: 1023px) {
+      .header-cta-slant {
+        clip-path: none;
+      }
+    }
+    .hero-vignette {
+      background: linear-gradient(90deg, rgba(22, 26, 32, 0.92) 0%, rgba(22, 26, 32, 0.75) 55%, rgba(22, 26, 32, 0.4) 100%);
+    }
+  </style>
+</head>
+
+<body class="bg-white text-zinc-800 font-sans antialiased selection:bg-colombo-green selection:text-white">
+
+  <!-- =========================================================================
+       HEADER (Consistent TitanInfra Dark Charcoal Bar + Slanted Callout)
+  ========================================================================== -->
+  <header class="sticky top-0 z-50 bg-colombo-dark text-white shadow-md">
+    <div class="max-w-[1400px] mx-auto flex items-stretch justify-between h-16 lg:h-[68px] pl-4 sm:pl-8 pr-0">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="flex items-center gap-3 py-2 shrink-0">
+        <img src="assets/logo-badge.png" alt="Logotipo Oficial Elétrica Colombo" class="h-11 w-11 rounded-[3px] object-contain shadow-sm border border-emerald-400/40">
+        <div class="flex flex-col leading-none">
+          <div class="flex items-baseline gap-1">
+            <span class="font-display font-extrabold text-2xl sm:text-[26px] tracking-wide text-white uppercase">COLOMBO</span>
+            <span class="font-display font-bold text-lg sm:text-xl tracking-wider text-colombo-yellow uppercase">ELÉTRICA</span>
+          </div>
+          <span class="text-[10px] uppercase tracking-[0.2em] text-zinc-300 font-semibold mt-0.5">Projetos Elétricos</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links (CONTATO Active) -->
+      <nav class="hidden lg:flex items-center gap-7 xl:gap-8" aria-label="Menu Principal">
+        <a href="index.html" class="nav-link relative h-full flex items-center text-[12px] font-semibold uppercase tracking-[0.08em] text-zinc-300 hover:text-white transition-colors">
+          INÍCIO
+        </a>
+        <a href="servicos.html" class="nav-link relative h-full flex items-center text-[12px] font-semibold uppercase tracking-[0.08em] text-zinc-300 hover:text-white transition-colors">
+          SERVIÇOS
+        </a>
+        <a href="obras.html" class="nav-link relative h-full flex items-center text-[12px] font-semibold uppercase tracking-[0.08em] text-zinc-300 hover:text-white transition-colors">
+          OBRAS REALIZADAS
+        </a>
+        <a href="empresa.html" class="nav-link relative h-full flex items-center text-[12px] font-semibold uppercase tracking-[0.08em] text-zinc-300 hover:text-white transition-colors">
+          A EMPRESA
+        </a>
+        <a href="contato.html" class="nav-link relative h-full flex items-center text-[12px] font-semibold uppercase tracking-[0.08em] text-white after:content-[''] after:absolute after:bottom-3.5 after:left-0 after:w-full after:h-[2.5px] after:bg-colombo-yellow">
+          CONTATO
+        </a>
+      </nav>
+
+      <!-- Right Slanted Callout -->
+      <div class="flex items-stretch">
+        <a href="https://wa.me/551434322962?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20El%C3%A9trica%20Colombo%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+           target="_blank" rel="noopener noreferrer"
+           class="header-cta-slant hidden sm:flex items-center gap-3 bg-colombo-green hover:bg-colombo-greenHover text-white pl-9 pr-6 lg:pr-8 transition-colors">
+          <div class="w-8 h-8 rounded-full bg-colombo-yellow text-colombo-dark flex items-center justify-center shrink-0">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.59a1 1 0 01-.25 1.01l-2.2 2.19z"/>
+            </svg>
+          </div>
+          <div class="flex flex-col leading-tight">
+            <span class="font-display font-extrabold text-lg tracking-wide text-white">(14) 3432-2962</span>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-colombo-yellow">SOLICITAR ORÇAMENTO</span>
+          </div>
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-btn" type="button" aria-label="Abrir Menu" class="lg:hidden px-4 flex items-center justify-center text-white hover:text-colombo-yellow">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-colombo-darker border-t border-zinc-700 px-6 py-4 space-y-3">
+      <a href="index.html" class="block py-1.5 text-xs font-bold uppercase tracking-wider text-zinc-200 hover:text-white">Início</a>
+      <a href="servicos.html" class="block py-1.5 text-xs font-bold uppercase tracking-wider text-zinc-200 hover:text-white">Serviços</a>
+      <a href="obras.html" class="block py-1.5 text-xs font-bold uppercase tracking-wider text-zinc-200 hover:text-white">Obras Realizadas</a>
+      <a href="empresa.html" class="block py-1.5 text-xs font-bold uppercase tracking-wider text-zinc-200 hover:text-white">A Empresa</a>
+      <a href="contato.html" class="block py-1.5 text-xs font-bold uppercase tracking-wider text-colombo-yellow">Contato</a>
+      <a href="https://wa.me/551434322962?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20El%C3%A9trica%20Colombo%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+         target="_blank" rel="noopener noreferrer"
+         class="mt-2 w-full inline-flex items-center justify-center gap-2 bg-colombo-green text-white font-display font-bold uppercase tracking-wider py-2.5 px-4 text-sm">
+        <span>(14) 3432-2962 • Solicitar Orçamento</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- =========================================================================
+         PAGE BANNER (Hero Dark Header with Breadcrumbs)
+    ========================================================================== -->
+    <section class="relative w-full h-[220px] sm:h-[260px] flex items-center overflow-hidden bg-colombo-dark">
+      <img src="assets/hero-munck-oficial.jpg" 
+           alt="Atendimento técnico e comercial da Elétrica Colombo em Marília" 
+           class="absolute inset-0 w-full h-full object-cover object-center opacity-45">
+      <div class="hero-vignette absolute inset-0"></div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 w-full">
+        <div class="inline-flex items-center gap-2 mb-2 text-xs font-mono font-semibold text-zinc-400 uppercase tracking-wider">
+          <a href="index.html" class="hover:text-colombo-yellow">INÍCIO</a>
+          <span>/</span>
+          <span class="text-colombo-yellow">CONTATO</span>
+        </div>
+        <h1 class="font-display font-extrabold uppercase text-3xl sm:text-5xl lg:text-6xl text-white tracking-wide leading-none">
+          CONTATO E ORÇAMENTOS: <span class="text-colombo-yellow">FALE CONOSCO</span>
+        </h1>
+        <p class="text-xs sm:text-sm text-zinc-300 mt-2 max-w-2xl">
+          Nossa equipe de engenharia e atendimento comercial está pronta para atender seu projeto de alta e baixa tensão, cabines de força e redes elétricas.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         TOP 3 CONTACT CARDS (Phone, Email, Headquarters)
+    ========================================================================== -->
+    <section class="py-10 bg-[#F5F6F8] border-b border-zinc-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          
+          <!-- Card 1: Telefone / WhatsApp -->
+          <div class="bg-white border border-zinc-200 rounded-[3px] p-5 flex items-start gap-4 shadow-sm">
+            <div class="w-12 h-12 rounded-[2px] bg-colombo-yellow text-colombo-dark flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.59a1 1 0 01-.25 1.01l-2.2 2.19z"/>
+              </svg>
+            </div>
+            <div>
+              <span class="text-[10px] font-mono uppercase font-bold text-zinc-500">TELEFONE &amp; WHATSAPP</span>
+              <h3 class="font-display font-extrabold text-xl text-colombo-dark mt-0.5">(14) 3432-2962</h3>
+              <p class="text-xs text-zinc-500 mt-1">Atendimento comercial de Segunda a Sexta das 07h30 às 18h00</p>
+              <a href="https://wa.me/551434322962" target="_blank" rel="noopener noreferrer" 
+                 class="inline-flex items-center gap-1 text-xs font-bold text-colombo-green hover:underline mt-2">
+                <span>Chamar no WhatsApp</span> &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2: E-mail -->
+          <div class="bg-white border border-zinc-200 rounded-[3px] p-5 flex items-start gap-4 shadow-sm">
+            <div class="w-12 h-12 rounded-[2px] bg-colombo-green text-white flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+            </div>
+            <div>
+              <span class="text-[10px] font-mono uppercase font-bold text-zinc-500">E-MAIL CORPORATIVO</span>
+              <h3 class="font-display font-bold text-base text-colombo-dark mt-0.5 break-all">eletricacolombo@terra.com.br</h3>
+              <p class="text-xs text-zinc-500 mt-1">Envio de plantas, editais de licitação e memoriais descritivos</p>
+              <a href="mailto:eletricacolombo@terra.com.br" 
+                 class="inline-flex items-center gap-1 text-xs font-bold text-colombo-green hover:underline mt-2">
+                <span>Enviar E-mail</span> &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3: Sede em Marília -->
+          <div class="bg-white border border-zinc-200 rounded-[3px] p-5 flex items-start gap-4 shadow-sm">
+            <div class="w-12 h-12 rounded-[2px] bg-colombo-dark text-colombo-yellow flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/>
+              </svg>
+            </div>
+            <div>
+              <span class="text-[10px] font-mono uppercase font-bold text-zinc-500">SEDE PRÓPRIA</span>
+              <h3 class="font-display font-bold text-sm text-colombo-dark mt-0.5">Av. Nelson Spielmann, 1655</h3>
+              <p class="text-xs text-zinc-500 mt-1">Bairro: Palmital - CEP 17509-002, Marília - SP</p>
+              <a href="https://maps.google.com/?q=Avenida+Nelson+Spielmann,+1655,+Palmital,+Marilia+-+SP" target="_blank" rel="noopener noreferrer" 
+                 class="inline-flex items-center gap-1 text-xs font-bold text-colombo-green hover:underline mt-2">
+                <span>Ver no Google Maps</span> &rarr;
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         DETAILED FORM & EMBEDDED MAP SECTION
+    ========================================================================== -->
+    <section class="py-14 lg:py-16 bg-white border-b border-zinc-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          
+          <!-- Left Column (5 cols): Institutional Info + Embedded Google Map -->
+          <div class="lg:col-span-5 space-y-6">
+            <div>
+              <div class="inline-flex items-center gap-2 mb-1">
+                <span class="w-4 h-[2px] bg-colombo-yellow"></span>
+                <span class="text-[11px] font-bold uppercase tracking-[0.15em] text-zinc-600">INFORMAÇÕES INSTITUCIONAIS</span>
+              </div>
+              <h2 class="font-display font-extrabold text-2xl sm:text-3xl uppercase tracking-wide text-colombo-dark leading-tight">
+                VISITE NOSSA SEDE OU AGENDE UMA <span class="text-colombo-green">VISTORIA TÉCNICA</span>
+              </h2>
+              <p class="text-xs sm:text-[13px] text-zinc-600 leading-relaxed mt-2.5">
+                Nossos engenheiros realizam visitas técnicas em loteamentos, indústrias e propriedades rurais para dimensionar a melhor solução em energia elétrica.
+              </p>
+            </div>
+
+            <!-- Dados Cadastrais & Atendimento -->
+            <div class="bg-[#F5F6F8] p-5 rounded-[3px] border border-zinc-200 space-y-3 text-xs text-zinc-700">
+              <div class="flex items-start gap-2.5">
+                <span class="text-colombo-green font-bold">&bull;</span>
+                <div>
+                  <strong class="text-colombo-dark block">Razão Social &amp; Nome Fantasia:</strong>
+                  <span>Elétrica Colombo (Colombo Projetos Elétricos)</span>
+                </div>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <span class="text-colombo-green font-bold">&bull;</span>
+                <div>
+                  <strong class="text-colombo-dark block">Endereço Comercial:</strong>
+                  <span>Avenida Nelson Spielmann, 1655, Bairro: Palmital - Marília - SP</span>
+                </div>
+              </div>
+              <div class="flex items-start gap-2.5">
+                <span class="text-colombo-green font-bold">&bull;</span>
+                <div>
+                  <strong class="text-colombo-dark block">Horário de Funcionamento:</strong>
+                  <span>Segunda a Sexta-feira: 07h30 às 18h00 | Atendimento de Obras e Emergências</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Embedded Google Map -->
+            <div class="border border-zinc-300 rounded-[3px] overflow-hidden shadow-sm">
+              <iframe 
+                title="Mapa Elétrica Colombo Marília"
+                src="https://www.google.com/maps?q=Avenida+Nelson+Spielmann,+1655,+Marilia,+SP&output=embed"
+                width="100%" 
+                height="240" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+              </iframe>
+            </div>
+          </div>
+
+          <!-- Right Column (7 cols): Full 2-Column Quote Request Form -->
+          <div class="lg:col-span-7 bg-white border border-zinc-300 rounded-[3px] p-6 sm:p-8 shadow-sm">
+            <div class="border-b border-zinc-200 pb-4 mb-6">
+              <h3 class="font-display font-extrabold text-2xl uppercase tracking-wide text-colombo-dark">
+                FORMULÁRIO DE ORÇAMENTO TÉCNICO
+              </h3>
+              <p class="text-xs text-zinc-500 mt-0.5">
+                Preencha os campos abaixo para receber a análise preliminar da nossa engenharia.
+              </p>
+            </div>
+
+            <form id="contact-page-form" class="space-y-4" novalidate>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="c-nome" class="block text-xs font-bold uppercase tracking-wider text-zinc-700 mb-1">Nome Completo *</label>
+                  <input type="text" id="c-nome" required placeholder="Seu nome ou responsável técnico"
+                         class="w-full px-3.5 py-2.5 text-xs text-zinc-800 bg-white border border-zinc-300 rounded-[2px] focus:outline-none focus:border-colombo-green">
+                </div>
+
+                <div>
+                  <label for="c-empresa" class="block text-xs font-bold uppercase tracking-wider text-zinc-700 mb-1">Empresa / Condomínio</label>
+                  <input type="text" id="c-empresa" placeholder="Nome da empresa ou propriedade"
+                         class="w-full px-3.5 py-2.5 text-xs text-zinc-800 bg-white border border-zinc-300 rounded-[2px] focus:outline-none focus:border-colombo-green">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="c-telefone" class="block text-xs font-bold uppercase tracking-wider text-zinc-700 mb-1">Telefone / WhatsApp *</label>
+                  <input type="tel" id="c-telefone" required placeholder="(14) 99000-0000"
+                         class="w-full px-3.5 py-2.5 text-xs text-zinc-800 bg-white border border-zinc-300 rounded-[2px] focus:outline-none focus:border-colombo-green">
+                </div>
+
+                <div>
+                  <label for="c-email" class="block text-xs font-bold uppercase tracking-wider text-zinc-700 mb-1">E-mail Corporativo *</label>
+                  <input type="email" id="c-email" required placeholder="contato@suaempresa.com.br"
+                         class="w-full px-3.5 py-2.5 text-xs text-zinc-800 bg-white border border-zinc-300 rounded-[2px] focus:outline-none focus:border-colombo-green">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="c-servico" class="block text-xs font-bold uppercase tracking-wider text-zinc-700 mb-1">Especialidade / Serviço *</label>
+                  <select id="c-servico" required
+                          class="w-full px-3.5 py-2.5 text-xs text-zinc-700 bg-white border border-zinc-300 rounded-[2px] focus:outline-none focus:border-colombo-green">
+                    <option value="">Selecione o serviço...</option>
+                    <option value="Instalações de Alta e Baixa Tensão">Instalações de Alta e Baixa Tensão</option>
+                    <option value="Montagem de Cabines de Força / Subestação">Montagem de Cabines de Força / Subestação</option>
+                    <option value="Painéis Elétricos e QGBT">Painéis Elétricos e QGBT</option>
+                    <option value="Redes de Energia / Caminhão Munck">Redes de Energia / Caminhão Munck</option>
+                    <option value="SPDA (Para-raios) e Aterramento">SPDA (Para-raios) e Aterramento</option>
+                    <option value="Comércio de Materiais Elétricos">Comércio de Materiais Elétricos</option>
+                    <option value="Laudos Técnicos e Homologação CPFL">Laudos Técnicos e Homologação CPFL</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="c-local" class="block text-xs font-bold uppercase tracking-wider text-zinc-700 mb-1">Cidade da Obra *</label>
+                  <input type="text" id="c-local" required value="Marília - SP"
+                         class="w-full px-3.5 py-2.5 text-xs text-zinc-800 bg-white border border-zinc-300 rounded-[2px] focus:outline-none focus:border-colombo-green">
+                </div>
+              </div>
+
+              <div>
+                <label for="c-detalhes" class="block text-xs font-bold uppercase tracking-wider text-zinc-700 mb-1">Descrição do Projeto ou Necessidade *</label>
+                <textarea id="c-detalhes" rows="4" required placeholder="Informe o escopo aproximado, potência estimada (kVA), número de postes ou necessidade de projeto..."
+                          class="w-full px-3.5 py-2.5 text-xs text-zinc-800 bg-white border border-zinc-300 rounded-[2px] focus:outline-none focus:border-colombo-green"></textarea>
+              </div>
+
+              <p id="c-msg" class="hidden text-xs font-semibold"></p>
+
+              <div class="pt-2 flex flex-col sm:flex-row items-center gap-3">
+                <button type="submit"
+                        class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-colombo-green hover:bg-colombo-greenHover text-white font-display font-bold text-sm uppercase tracking-wider px-6 py-3 rounded-[3px] shadow transition-colors">
+                  <span>ENVIAR SOLICITAÇÃO VIA WHATSAPP</span>
+                  <span class="text-colombo-yellow">&rarr;</span>
+                </button>
+
+                <button type="button" id="c-email-btn"
+                        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-colombo-dark hover:bg-colombo-darker text-white font-display font-bold text-sm uppercase tracking-wider px-6 py-3 rounded-[3px] transition-colors">
+                  <span>ENVIAR POR E-MAIL</span>
+                </button>
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       FOOTER (Consistent TitanInfra 5-Column Dark Charcoal Footer)
+  ========================================================================== -->
+  <footer class="bg-colombo-dark text-zinc-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 py-12">
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 pb-10 border-b border-zinc-700/80">
+        
+        <!-- Col 1 (3 cols): Brand Logo + Tagline + Circular Social Icons -->
+        <div class="lg:col-span-3">
+          <a href="index.html" class="flex items-center gap-2.5 mb-3">
+            <img src="assets/logo-badge.png" alt="Logotipo Oficial Elétrica Colombo" class="h-9 w-9 rounded-[3px] object-contain border border-emerald-400/40">
+            <div class="flex flex-col leading-none">
+              <div class="flex items-baseline gap-1">
+                <span class="font-display font-extrabold text-xl tracking-wide text-white uppercase">COLOMBO</span>
+                <span class="font-display font-bold text-base tracking-wider text-colombo-yellow uppercase">ELÉTRICA</span>
+              </div>
+              <span class="text-[9px] uppercase tracking-[0.18em] text-zinc-400 font-semibold">Projetos Elétricos</span>
+            </div>
+          </a>
+
+          <p class="text-xs text-zinc-400 leading-relaxed mb-5 max-w-[230px]">
+            Soluções em instalações elétricas de alta e baixa tensão, cabines de força, painéis, redes de energia e SPDA com segurança e eficiência.
+          </p>
+
+          <div class="flex items-center gap-2.5">
+            <a href="https://www.facebook.com/eletricacolombo" target="_blank" rel="noopener noreferrer" aria-label="Facebook Elétrica Colombo"
+               class="w-7 h-7 rounded-full bg-white text-colombo-dark hover:bg-colombo-yellow flex items-center justify-center transition-colors">
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/eletricacolombo" target="_blank" rel="noopener noreferrer" aria-label="Instagram Elétrica Colombo"
+               class="w-7 h-7 rounded-full bg-white text-colombo-dark hover:bg-colombo-yellow flex items-center justify-center transition-colors">
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 01-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 017.8 2zm-.2 2A3.6 3.6 0 004 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 003.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6zm9.65 1.5a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z"/>
+              </svg>
+            </a>
+            <a href="https://wa.me/551434322962" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Elétrica Colombo"
+               class="w-7 h-7 rounded-full bg-white text-colombo-dark hover:bg-colombo-green hover:text-white flex items-center justify-center transition-colors">
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.59a1 1 0 01-.25 1.01l-2.2 2.19z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2 (2 cols): A EMPRESA -->
+        <div class="lg:col-span-2">
+          <h3 class="font-display font-bold text-sm uppercase tracking-wider text-white mb-3">A EMPRESA</h3>
+          <ul class="space-y-2 text-xs text-zinc-400">
+            <li><a href="index.html" class="hover:text-colombo-yellow transition-colors">Início</a></li>
+            <li><a href="empresa.html" class="hover:text-colombo-yellow transition-colors">Quem Somos</a></li>
+            <li><a href="empresa.html#seguranca" class="hover:text-colombo-yellow transition-colors">Normas NR-10 e NR-35</a></li>
+            <li><a href="empresa.html#frota" class="hover:text-colombo-yellow transition-colors">Frota de Caminhão Munck</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 (3 cols): SERVIÇOS -->
+        <div class="lg:col-span-3">
+          <h3 class="font-display font-bold text-sm uppercase tracking-wider text-white mb-3">SERVIÇOS</h3>
+          <ul class="space-y-2 text-xs text-zinc-400">
+            <li><a href="servicos.html#alta-baixa-tensao" class="hover:text-colombo-yellow transition-colors">Instalações de Alta e Baixa Tensão</a></li>
+            <li><a href="servicos.html#cabines-forca" class="hover:text-colombo-yellow transition-colors">Montagem de Cabines de Força</a></li>
+            <li><a href="servicos.html#paineis-eletricos" class="hover:text-colombo-yellow transition-colors">Painéis Elétricos e QGBT</a></li>
+            <li><a href="servicos.html#redes-energia" class="hover:text-colombo-yellow transition-colors">Redes de Energia Aéreas e Subterrâneas</a></li>
+            <li><a href="servicos.html#spda" class="hover:text-colombo-yellow transition-colors">SPDA e Para-raios</a></li>
+            <li><a href="servicos.html#materiais-laudos" class="hover:text-colombo-yellow transition-colors">Comércio de Materiais Elétricos</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4 (1.5 cols): RECURSOS -->
+        <div class="lg:col-span-1">
+          <h3 class="font-display font-bold text-sm uppercase tracking-wider text-white mb-3">LINKS</h3>
+          <ul class="space-y-2 text-xs text-zinc-400">
+            <li><a href="obras.html" class="hover:text-colombo-yellow transition-colors">Obras</a></li>
+            <li><a href="empresa.html#seguranca" class="hover:text-colombo-yellow transition-colors">Segurança</a></li>
+            <li><a href="contato.html" class="hover:text-colombo-yellow transition-colors">Orçamento</a></li>
+            <li><a href="https://www.facebook.com/eletricacolombo" target="_blank" rel="noopener noreferrer" class="hover:text-colombo-yellow transition-colors">Facebook</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5 (3 cols): CONTATO -->
+        <div class="lg:col-span-3">
+          <h3 class="font-display font-bold text-sm uppercase tracking-wider text-white mb-3">CONTATO</h3>
+          <ul class="space-y-2.5 text-xs text-zinc-300">
+            <li class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 text-colombo-yellow shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+              <a href="tel:+551434322962" class="hover:text-colombo-yellow">(14) 3432-2962</a>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 text-colombo-yellow shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              <a href="mailto:eletricacolombo@terra.com.br" class="hover:text-colombo-yellow break-all">eletricacolombo@terra.com.br</a>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-colombo-yellow shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              <span>Avenida Nelson Spielmann, 1655,<br>Bairro: Palmital - CEP 17509-002<br>Marília - SP, Brasil</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-400">
+        <p>© 2026 Elétrica Colombo (Colombo Projetos Elétricos). Todos os direitos reservados.</p>
+        <div class="flex items-center gap-4">
+          <a href="empresa.html" class="hover:text-white">Política de Privacidade</a>
+          <span>|</span>
+          <a href="contato.html" class="hover:text-white">Termos de Uso</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    const mobileBtn = document.getElementById('mobile-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Form logic
+    const form = document.getElementById('contact-page-form');
+    const emailBtn = document.getElementById('c-email-btn');
+    const msg = document.getElementById('c-msg');
+
+    function getFormData() {
+      const nome = document.getElementById('c-nome').value.trim();
+      const empresa = document.getElementById('c-empresa').value.trim() || 'Não informada';
+      const telefone = document.getElementById('c-telefone').value.trim();
+      const email = document.getElementById('c-email').value.trim();
+      const servico = document.getElementById('c-servico').value || 'Não selecionado';
+      const local = document.getElementById('c-local').value.trim() || 'Marília - SP';
+      const detalhes = document.getElementById('c-detalhes').value.trim();
+      return { nome, empresa, telefone, email, servico, local, detalhes };
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const d = getFormData();
+      if (!d.nome || !d.telefone || !d.detalhes || !d.email) {
+        msg.textContent = 'Por favor, preencha todos os campos obrigatórios (*).';
+        msg.classList.remove('hidden', 'text-colombo-green');
+        msg.classList.add('text-red-600');
+        return;
+      }
+      msg.textContent = 'Redirecionando para o WhatsApp da Elétrica Colombo...';
+      msg.classList.remove('hidden', 'text-red-600');
+      msg.classList.add('text-colombo-green');
+
+      const texto = `Olá, Elétrica Colombo! Vim pelo formulário de contato do site e gostaria de solicitar um orçamento:\n\n*Nome:* ${d.nome}\n*Empresa:* ${d.empresa}\n*Telefone:* ${d.telefone}\n*E-mail:* ${d.email}\n*Serviço:* ${d.servico}\n*Cidade da Obra:* ${d.local}\n*Detalhes:* ${d.detalhes}`;
+      window.open(`https://wa.me/551434322962?text=${encodeURIComponent(texto)}`, '_blank', 'noopener,noreferrer');
+    });
+
+    emailBtn.addEventListener('click', () => {
+      const d = getFormData();
+      if (!d.nome || !d.telefone || !d.detalhes || !d.email) {
+        msg.textContent = 'Por favor, preencha todos os campos obrigatórios (*) antes de enviar por e-mail.';
+        msg.classList.remove('hidden', 'text-colombo-green');
+        msg.classList.add('text-red-600');
+        return;
+      }
+      const subject = `Solicitação de Orçamento: ${d.servico} - ${d.nome}`;
+      const body = `Nome: ${d.nome}\nEmpresa: ${d.empresa}\nTelefone: ${d.telefone}\nE-mail: ${d.email}\nServiço: ${d.servico}\nCidade da Obra: ${d.local}\n\nDetalhes:\n${d.detalhes}`;
+      window.location.href = `mailto:eletricacolombo@terra.com.br?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  </script>
+
+</body>
+</html>
+
