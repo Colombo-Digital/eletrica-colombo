@@ -295,8 +295,9 @@
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label for="c-nome" class="block text-xs font-bold uppercase tracking-wider text-zinc-700 mb-1">Nome Completo *</label>
-                  <input type="text" id="c-nome" required placeholder="Seu nome ou responsável técnico"
+                  <input type="text" id="c-nome" required placeholder="Seu nome ou responsável técnico" maxlength="80"
                          class="w-full px-3.5 py-2.5 text-xs text-zinc-800 bg-white border border-zinc-300 rounded-[2px] focus:outline-none focus:border-colombo-green">
+                  <p id="c-nome-error" class="hidden text-[10px] text-red-500 mt-1"></p>
                 </div>
 
                 <div>
@@ -309,14 +310,16 @@
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label for="c-telefone" class="block text-xs font-bold uppercase tracking-wider text-zinc-700 mb-1">Telefone para Contato *</label>
-                  <input type="tel" id="c-telefone" required placeholder="(14) 99000-0000"
+                  <input type="tel" id="c-telefone" required placeholder="(14) 99000-0000" maxlength="15"
                          class="w-full px-3.5 py-2.5 text-xs text-zinc-800 bg-white border border-zinc-300 rounded-[2px] focus:outline-none focus:border-colombo-green">
+                  <p id="c-tel-error" class="hidden text-[10px] text-red-500 mt-1"></p>
                 </div>
 
                 <div>
                   <label for="c-email" class="block text-xs font-bold uppercase tracking-wider text-zinc-700 mb-1">E-mail Corporativo *</label>
-                  <input type="email" id="c-email" required placeholder="contato@suaempresa.com.br"
+                  <input type="email" id="c-email" required placeholder="contato@suaempresa.com.br" maxlength="100"
                          class="w-full px-3.5 py-2.5 text-xs text-zinc-800 bg-white border border-zinc-300 rounded-[2px] focus:outline-none focus:border-colombo-green">
+                  <p id="c-email-error" class="hidden text-[10px] text-red-500 mt-1"></p>
                 </div>
               </div>
 
@@ -490,31 +493,103 @@
       mobileMenu.classList.toggle('hidden');
     });
 
-    // Form logic Web3Forms (Opcao 1 - Entrega direta no e-mail)
+    // Form logic Web3Forms + Mask & Strict Validation
     const form = document.getElementById('contact-page-form');
     const msg = document.getElementById('c-msg');
     const submitBtn = form.querySelector('button[type="submit"]');
 
-    function getFormData() {
-      const nome = document.getElementById('c-nome').value.trim();
-      const empresa = document.getElementById('c-empresa').value.trim() || 'Não informada';
-      const telefone = document.getElementById('c-telefone').value.trim();
-      const email = document.getElementById('c-email').value.trim();
-      const servico = document.getElementById('c-servico').value || 'Não selecionado';
-      const local = document.getElementById('c-local').value.trim() || 'Marília - SP';
-      const detalhes = document.getElementById('c-detalhes').value.trim();
-      return { nome, empresa, telefone, email, servico, local, detalhes };
+    const telInput = document.getElementById('c-telefone');
+    const emailInput = document.getElementById('c-email');
+    const nomeInput = document.getElementById('c-nome');
+    const telError = document.getElementById('c-tel-error');
+    const emailError = document.getElementById('c-email-error');
+    const nomeError = document.getElementById('c-nome-error');
+
+    // Phone Mask: (XX) XXXXX-XXXX or (XX) XXXX-XXXX
+    function maskPhone(value) {
+      let r = value.replace(/\D/g, '');
+      if (r.length > 11) r = r.substring(0, 11);
+      if (r.length > 10) {
+        return r.replace(/^(\d\d)(\d{5})(\d{4})$/, '($1) $2-$3');
+      } else if (r.length > 6) {
+        return r.replace(/^(\d\d)(\d{4})(\d{0,4})$/, '($1) $2-$3');
+      } else if (r.length > 2) {
+        return r.replace(/^(\d\d)(\d{0,5})$/, '($1) $2');
+      } else if (r.length > 0) {
+        return r.replace(/^(\d*)$/, '($1');
+      }
+      return '';
+    }
+
+    telInput.addEventListener('input', (e) => {
+      e.target.value = maskPhone(e.target.value);
+      if (telError) telError.classList.add('hidden');
+    });
+
+    emailInput.addEventListener('input', () => {
+      if (emailError) emailError.classList.add('hidden');
+    });
+
+    nomeInput.addEventListener('input', () => {
+      if (nomeError) nomeError.classList.add('hidden');
+    });
+
+    function isValidEmail(email) {
+      return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/.test(email);
     }
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const d = getFormData();
-      if (!d.nome || !d.telefone || !d.detalhes || !d.email) {
-        msg.textContent = 'Por favor, preencha todos os campos obrigatórios (*).';
+      const nome = nomeInput.value.trim();
+      const empresa = document.getElementById('c-empresa').value.trim() || 'Não informada';
+      const telefone = telInput.value.trim();
+      const email = emailInput.value.trim();
+      const servico = document.getElementById('c-servico').value || 'Não selecionado';
+      const local = document.getElementById('c-local').value.trim() || 'Marília - SP';
+      const detalhes = document.getElementById('c-detalhes').value.trim();
+
+      let hasError = false;
+
+      // Validate Nome
+      if (!nome || nome.length < 3 || !/[a-zA-ZÀ-ÿ]{2,}/.test(nome)) {
+        nomeError.textContent = 'Informe um nome completo válido (mínimo 3 letras).';
+        nomeError.classList.remove('hidden');
+        nomeInput.focus();
+        hasError = true;
+      } else {
+        nomeError.classList.add('hidden');
+      }
+
+      // Validate E-mail
+      if (!email || !isValidEmail(email)) {
+        emailError.textContent = 'Por favor, informe um endereço de e-mail corporativo válido (ex: contato@suaempresa.com.br).';
+        emailError.classList.remove('hidden');
+        if (!hasError) emailInput.focus();
+        hasError = true;
+      } else {
+        emailError.classList.add('hidden');
+      }
+
+      // Validate Telefone
+      const rawTel = telefone.replace(/\D/g, '');
+      if (rawTel.length < 10) {
+        telError.textContent = 'Informe um telefone com DDD válido (10 ou 11 dígitos).';
+        telError.classList.remove('hidden');
+        if (!hasError) telInput.focus();
+        hasError = true;
+      } else {
+        telError.classList.add('hidden');
+      }
+
+      if (!detalhes || detalhes.length < 5) {
+        msg.textContent = 'Por favor, descreva brevemente sua necessidade (mínimo 5 caracteres).';
         msg.classList.remove('hidden', 'text-colombo-green');
         msg.classList.add('text-red-600');
-        return;
+        if (!hasError) document.getElementById('c-detalhes').focus();
+        hasError = true;
       }
+
+      if (hasError) return;
 
       const originalBtnHtml = submitBtn.innerHTML;
       submitBtn.disabled = true;
@@ -532,15 +607,15 @@
           },
           body: JSON.stringify({
             access_key: 'ae1a2a2c-f97f-4cd2-bbdf-37c59c600a81',
-            subject: `Novo Contato do Site: ${d.servico} - ${d.nome}`,
+            subject: `Novo Contato do Site: ${servico} - ${nome}`,
             from_name: 'Página de Contato - Elétrica Colombo',
-            nome: d.nome,
-            email: d.email,
-            telefone: d.telefone,
-            empresa: d.empresa,
-            servico: d.servico,
-            local_obra: d.local,
-            mensagem: d.detalhes
+            nome: nome,
+            email: email,
+            telefone: telefone,
+            empresa: empresa,
+            servico: servico,
+            local_obra: local,
+            mensagem: detalhes
           })
         });
 
@@ -552,7 +627,7 @@
           msg.classList.add('text-colombo-green');
           form.reset();
         } else {
-          msg.innerHTML = `Mensagem registrada! Para envio imediato, <a href="mailto:eletricacolombo@terra.com.br?subject=Orçamento%20${encodeURIComponent(d.servico)}" class="underline font-bold text-colombo-green">clique aqui para enviar por e-mail direto</a> ou ligue em <a href="tel:+551434322962" class="underline font-bold text-colombo-green">(14) 3432-2962</a>.`;
+          msg.innerHTML = `Mensagem registrada! Para envio imediato, <a href="mailto:eletricacolombo@terra.com.br?subject=Orçamento%20${encodeURIComponent(servico)}" class="underline font-bold text-colombo-green">clique aqui para enviar por e-mail direto</a> ou ligue em <a href="tel:+551434322962" class="underline font-bold text-colombo-green">(14) 3432-2962</a>.`;
           msg.classList.remove('text-red-600');
           msg.classList.add('text-colombo-green');
         }

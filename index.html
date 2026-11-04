@@ -761,15 +761,24 @@
 
               <form id="quote-form" class="space-y-3.5" novalidate>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                  <input type="text" id="nome" required placeholder="Nome Completo*"
-                    class="w-full px-3.5 py-2.5 text-xs text-zinc-800 bg-white border border-zinc-300 rounded-[2px] focus:outline-none focus:border-colombo-green">
-                  <input type="email" id="email" required placeholder="Seu E-mail*"
-                    class="w-full px-3.5 py-2.5 text-xs text-zinc-800 bg-white border border-zinc-300 rounded-[2px] focus:outline-none focus:border-colombo-green">
+                  <div>
+                    <input type="text" id="nome" required placeholder="Nome Completo*" maxlength="80"
+                      class="w-full px-3.5 py-2.5 text-xs text-zinc-800 bg-white border border-zinc-300 rounded-[2px] focus:outline-none focus:border-colombo-green">
+                    <p id="nome-error" class="hidden text-[10px] text-red-500 mt-1"></p>
+                  </div>
+                  <div>
+                    <input type="email" id="email" required placeholder="Seu E-mail (ex: contato@empresa.com)*" maxlength="100"
+                      class="w-full px-3.5 py-2.5 text-xs text-zinc-800 bg-white border border-zinc-300 rounded-[2px] focus:outline-none focus:border-colombo-green">
+                    <p id="email-error" class="hidden text-[10px] text-red-500 mt-1"></p>
+                  </div>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                  <input type="tel" id="telefone" required placeholder="Telefone para Contato*"
-                    class="w-full px-3.5 py-2.5 text-xs text-zinc-800 bg-white border border-zinc-300 rounded-[2px] focus:outline-none focus:border-colombo-green">
+                  <div>
+                    <input type="tel" id="telefone" required placeholder="Telefone para Contato (ex: 14 99000-0000)*" maxlength="15"
+                      class="w-full px-3.5 py-2.5 text-xs text-zinc-800 bg-white border border-zinc-300 rounded-[2px] focus:outline-none focus:border-colombo-green">
+                    <p id="tel-error" class="hidden text-[10px] text-red-500 mt-1"></p>
+                  </div>
                   <input type="text" id="empresa-nome" placeholder="Nome da Empresa / Condomínio"
                     class="w-full px-3.5 py-2.5 text-xs text-zinc-800 bg-white border border-zinc-300 rounded-[2px] focus:outline-none focus:border-colombo-green">
                 </div>
@@ -963,27 +972,104 @@
       mobileMenu.classList.toggle('hidden');
     });
 
-    // Form Submission with Web3Forms (Opcao 1 - Entrega direta no e-mail)
+    // Form Submission with Web3Forms + Mask & Strict Validation
     const quoteForm = document.getElementById('quote-form');
     const formMsg = document.getElementById('form-msg');
     const submitBtn = quoteForm.querySelector('button[type="submit"]');
 
+    const telInput = document.getElementById('telefone');
+    const emailInput = document.getElementById('email');
+    const nomeInput = document.getElementById('nome');
+    const telError = document.getElementById('tel-error');
+    const emailError = document.getElementById('email-error');
+    const nomeError = document.getElementById('nome-error');
+
+    // Phone Mask: (XX) XXXXX-XXXX or (XX) XXXX-XXXX
+    function maskPhone(value) {
+      let r = value.replace(/\D/g, '');
+      if (r.length > 11) r = r.substring(0, 11);
+      if (r.length > 10) {
+        return r.replace(/^(\d\d)(\d{5})(\d{4})$/, '($1) $2-$3');
+      } else if (r.length > 6) {
+        return r.replace(/^(\d\d)(\d{4})(\d{0,4})$/, '($1) $2-$3');
+      } else if (r.length > 2) {
+        return r.replace(/^(\d\d)(\d{0,5})$/, '($1) $2');
+      } else if (r.length > 0) {
+        return r.replace(/^(\d*)$/, '($1');
+      }
+      return '';
+    }
+
+    telInput.addEventListener('input', (e) => {
+      e.target.value = maskPhone(e.target.value);
+      if (telError) telError.classList.add('hidden');
+    });
+
+    emailInput.addEventListener('input', () => {
+      if (emailError) emailError.classList.add('hidden');
+    });
+
+    nomeInput.addEventListener('input', () => {
+      if (nomeError) nomeError.classList.add('hidden');
+    });
+
+    // Email validation regex (RFC 5322 standard simple)
+    function isValidEmail(email) {
+      return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/.test(email);
+    }
+
     quoteForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const nome = document.getElementById('nome').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const telefone = document.getElementById('telefone').value.trim();
+      const nome = nomeInput.value.trim();
+      const email = emailInput.value.trim();
+      const telefone = telInput.value.trim();
       const empresa = document.getElementById('empresa-nome').value.trim() || 'Não informada';
       const servico = document.getElementById('tipo-projeto').value || 'Orçamento Geral';
       const local = document.getElementById('localizacao').value.trim() || 'Marília - SP';
       const detalhes = document.getElementById('detalhes').value.trim();
 
-      if (!nome || !telefone || !detalhes || !email) {
-        formMsg.textContent = 'Por favor, preencha os campos obrigatórios (*).';
+      let hasError = false;
+
+      // Validate Nome (at least 3 characters and letters)
+      if (!nome || nome.length < 3 || !/[a-zA-ZÀ-ÿ]{2,}/.test(nome)) {
+        nomeError.textContent = 'Informe um nome completo válido (mínimo 3 letras).';
+        nomeError.classList.remove('hidden');
+        nomeInput.focus();
+        hasError = true;
+      } else {
+        nomeError.classList.add('hidden');
+      }
+
+      // Validate E-mail
+      if (!email || !isValidEmail(email)) {
+        emailError.textContent = 'Por favor, informe um endereço de e-mail válido (ex: nome@dominio.com).';
+        emailError.classList.remove('hidden');
+        if (!hasError) emailInput.focus();
+        hasError = true;
+      } else {
+        emailError.classList.add('hidden');
+      }
+
+      // Validate Telefone (at least 10 digits for landline or 11 for mobile)
+      const rawTel = telefone.replace(/\D/g, '');
+      if (rawTel.length < 10) {
+        telError.textContent = 'Informe um telefone com DDD válido (10 ou 11 dígitos).';
+        telError.classList.remove('hidden');
+        if (!hasError) telInput.focus();
+        hasError = true;
+      } else {
+        telError.classList.add('hidden');
+      }
+
+      if (!detalhes || detalhes.length < 5) {
+        formMsg.textContent = 'Por favor, detalhe brevemente sua necessidade (mínimo 5 caracteres).';
         formMsg.classList.remove('hidden', 'text-colombo-green');
         formMsg.classList.add('text-red-500');
-        return;
+        if (!hasError) document.getElementById('detalhes').focus();
+        hasError = true;
       }
+
+      if (hasError) return;
 
       const originalBtnHtml = submitBtn.innerHTML;
       submitBtn.disabled = true;
@@ -1021,7 +1107,6 @@
           formMsg.classList.add('text-colombo-green');
           quoteForm.reset();
         } else {
-          // Se a chave ainda for a padrão ou falhar, oferece fallback transparente para o e-mail
           formMsg.innerHTML = `Mensagem registrada! Caso prefira agilidade, <a href="mailto:eletricacolombo@terra.com.br?subject=Orçamento%20${encodeURIComponent(servico)}" class="underline font-bold text-white">clique aqui para confirmar o envio por e-mail</a> ou nos ligue em <a href="tel:+551434322962" class="underline font-bold text-colombo-yellow">(14) 3432-2962</a>.`;
           formMsg.classList.remove('text-red-500');
           formMsg.classList.add('text-colombo-yellow');
