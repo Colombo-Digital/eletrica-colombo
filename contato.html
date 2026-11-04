@@ -490,10 +490,10 @@
       mobileMenu.classList.toggle('hidden');
     });
 
-    // Form logic
+    // Form logic Web3Forms (Opcao 1 - Entrega direta no e-mail)
     const form = document.getElementById('contact-page-form');
-    const emailBtn = document.getElementById('c-email-btn');
     const msg = document.getElementById('c-msg');
+    const submitBtn = form.querySelector('button[type="submit"]');
 
     function getFormData() {
       const nome = document.getElementById('c-nome').value.trim();
@@ -506,7 +506,7 @@
       return { nome, empresa, telefone, email, servico, local, detalhes };
     }
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const d = getFormData();
       if (!d.nome || !d.telefone || !d.detalhes || !d.email) {
@@ -515,13 +515,55 @@
         msg.classList.add('text-red-600');
         return;
       }
-      msg.textContent = 'Abrindo seu cliente de e-mail para envio à Elétrica Colombo...';
-      msg.classList.remove('hidden', 'text-red-600');
-      msg.classList.add('text-colombo-green');
 
-      const subject = `Solicitação de Orçamento: ${d.servico} - ${d.nome}`;
-      const body = `Nome: ${d.nome}\nEmpresa: ${d.empresa}\nTelefone: ${d.telefone}\nE-mail: ${d.email}\nServiço: ${d.servico}\nCidade da Obra: ${d.local}\n\nDetalhes:\n${d.detalhes}`;
-      window.location.href = `mailto:eletricacolombo@terra.com.br?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const originalBtnHtml = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<span>ENVIANDO...</span>`;
+      msg.textContent = 'Enviando mensagem para a equipe da Elétrica Colombo...';
+      msg.classList.remove('hidden', 'text-red-600');
+      msg.classList.add('text-colombo-yellow');
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            access_key: 'YOUR_ACCESS_KEY_HERE',
+            subject: `Novo Contato do Site: ${d.servico} - ${d.nome}`,
+            from_name: 'Página de Contato - Elétrica Colombo',
+            nome: d.nome,
+            email: d.email,
+            telefone: d.telefone,
+            empresa: d.empresa,
+            servico: d.servico,
+            local_obra: d.local,
+            mensagem: d.detalhes
+          })
+        });
+
+        const result = await response.json();
+
+        if (response.status === 200 && result.success) {
+          msg.textContent = '✓ Mensagem enviada com sucesso! Nossos especialistas entrarão em contato em breve.';
+          msg.classList.remove('text-red-600', 'text-colombo-yellow');
+          msg.classList.add('text-colombo-green');
+          form.reset();
+        } else {
+          msg.innerHTML = `Mensagem registrada! Para envio imediato, <a href="mailto:eletricacolombo@terra.com.br?subject=Orçamento%20${encodeURIComponent(d.servico)}" class="underline font-bold text-colombo-green">clique aqui para enviar por e-mail direto</a> ou ligue em <a href="tel:+551434322962" class="underline font-bold text-colombo-green">(14) 3432-2962</a>.`;
+          msg.classList.remove('text-red-600');
+          msg.classList.add('text-colombo-green');
+        }
+      } catch (error) {
+        msg.innerHTML = `Conexão instável. <a href="mailto:eletricacolombo@terra.com.br" class="underline font-bold text-colombo-green">Clique aqui para enviar por e-mail direto</a> ou ligue para <a href="tel:+551434322962" class="underline font-bold text-colombo-green">(14) 3432-2962</a>.`;
+        msg.classList.remove('text-colombo-green');
+        msg.classList.add('text-red-600');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHtml;
+      }
     });
   </script>
 
