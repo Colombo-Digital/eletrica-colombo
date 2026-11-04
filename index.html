@@ -68,7 +68,7 @@
 
     /* Hero left dark vignette so condensed white/green/yellow text pops over full-bleed photo */
     .hero-vignette {
-      background: linear-gradient(90deg, rgba(22, 26, 32, 0.88) 0%, rgba(22, 26, 32, 0.62) 48%, rgba(22, 26, 32, 0.15) 100%);
+      background: linear-gradient(90deg, rgba(22, 26, 32, 0.94) 0%, rgba(22, 26, 32, 0.82) 38%, rgba(22, 26, 32, 0.35) 65%, rgba(22, 26, 32, 0.05) 100%);
     }
   </style>
 </head>
@@ -169,10 +169,10 @@
     ========================================================================== -->
     <section id="inicio"
       class="relative w-full h-[460px] sm:h-[520px] lg:h-[580px] flex items-center overflow-hidden bg-colombo-dark">
-      <!-- Full-bleed Official Field Photo of Caminhão Munck Oficial da Elétrica Colombo -->
-      <img src="assets/hero-munck-oficial.jpg"
+      <!-- Full-bleed Official Field Photo of Caminhão Munck Oficial da Elétrica Colombo shifted right -->
+      <img src="assets/hero-munck-desktop.jpg"
         alt="Caminhão Munck oficial Mercedes-Benz da Elétrica Colombo com postes de concreto"
-        class="absolute inset-0 w-full h-full object-cover object-[25%_center] sm:object-center">
+        class="absolute inset-0 w-full h-full object-cover object-[65%_center] lg:object-right">
 
       <!-- Left Dark Gradient Overlay for Crisp Typography Contrast -->
       <div class="hero-vignette absolute inset-0"></div>
@@ -896,101 +896,97 @@
             </a>
           </div>
         </div>
-        </svg>
-        </a>
+
+        <!-- Col 2 (2 cols): A EMPRESA -->
+        <div class="lg:col-span-2">
+          <h3 class="font-display font-bold text-sm uppercase tracking-wider text-white mb-3">A EMPRESA</h3>
+          <ul class="space-y-2 text-xs text-zinc-400">
+            <li><a href="index.html" class="hover:text-colombo-yellow transition-colors">Início</a></li>
+            <li><a href="empresa.html" class="hover:text-colombo-yellow transition-colors">Quem Somos</a></li>
+            <li><a href="empresa.html#seguranca" class="hover:text-colombo-yellow transition-colors">Normas NR-10 e
+                NR-35</a></li>
+            <li><a href="empresa.html#frota" class="hover:text-colombo-yellow transition-colors">Frota de Caminhão
+                Munck</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 (3 cols): SERVIÇOS -->
+        <div class="lg:col-span-3">
+          <h3 class="font-display font-bold text-sm uppercase tracking-wider text-white mb-3">SERVIÇOS</h3>
+          <ul class="space-y-2 text-xs text-zinc-400">
+            <li><a href="servicos.html#alta-baixa-tensao" class="hover:text-colombo-yellow transition-colors">Instalações de
+                Alta e Baixa Tensão</a></li>
+            <li><a href="servicos.html#cabines-forca" class="hover:text-colombo-yellow transition-colors">Montagem de
+                Cabines de Força</a></li>
+            <li><a href="servicos.html#paineis-eletricos" class="hover:text-colombo-yellow transition-colors">Painéis
+                Elétricos e QGBT</a></li>
+            <li><a href="servicos.html#redes-energia" class="hover:text-colombo-yellow transition-colors">Redes de
+                Energia Aéreas e Subterrâneas</a></li>
+            <li><a href="servicos.html#spda" class="hover:text-colombo-yellow transition-colors">SPDA e Para-raios</a>
+            </li>
+            <li><a href="servicos.html#materiais-laudos" class="hover:text-colombo-yellow transition-colors">Comércio de
+                Materiais Elétricos</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4 (1.5 cols): RECURSOS -->
+        <div class="lg:col-span-1">
+          <h3 class="font-display font-bold text-sm uppercase tracking-wider text-white mb-3">LINKS</h3>
+          <ul class="space-y-2 text-xs text-zinc-400">
+            <li><a href="obras.html" class="hover:text-colombo-yellow transition-colors">Obras</a></li>
+            <li><a href="empresa.html#seguranca" class="hover:text-colombo-yellow transition-colors">Segurança</a></li>
+            <li><a href="contato.html" class="hover:text-colombo-yellow transition-colors">Orçamento</a></li>
+            <li><a href="https://www.facebook.com/eletricacolombomarilia?locale=pt_BR" target="_blank"
+                rel="noopener noreferrer" class="hover:text-colombo-yellow transition-colors">Facebook</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5 (3 cols): CONTATO -->
+        <div class="lg:col-span-3">
+          <h3 class="font-display font-bold text-sm uppercase tracking-wider text-white mb-3">CONTATO</h3>
+          <ul class="space-y-2.5 text-xs text-zinc-300">
+            <li class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 text-colombo-yellow shrink-0" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              <a href="tel:+551434322962" class="hover:text-colombo-yellow">(14) 3432-2962</a>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 text-colombo-yellow shrink-0" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <a href="mailto:eletricacolombo@terra.com.br"
+                class="hover:text-colombo-yellow break-all">eletricacolombo@terra.com.br</a>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <svg class="w-4 h-4 text-colombo-yellow shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span>Avenida Nelson Spielmann, 1655,<br>Bairro: Palmital - CEP 17509-002<br>Marília - SP, Brasil</span>
+            </li>
+          </ul>
+        </div>
+
       </div>
-    </div>
 
-    <!-- Col 2 (2 cols): A EMPRESA -->
-    <div class="lg:col-span-2">
-      <h3 class="font-display font-bold text-sm uppercase tracking-wider text-white mb-3">A EMPRESA</h3>
-      <ul class="space-y-2 text-xs text-zinc-400">
-        <li><a href="index.html" class="hover:text-colombo-yellow transition-colors">Início</a></li>
-        <li><a href="empresa.html" class="hover:text-colombo-yellow transition-colors">Quem Somos</a></li>
-        <li><a href="empresa.html#seguranca" class="hover:text-colombo-yellow transition-colors">Normas NR-10 e
-            NR-35</a></li>
-        <li><a href="empresa.html#frota" class="hover:text-colombo-yellow transition-colors">Frota de Caminhão
-            Munck</a></li>
-      </ul>
-    </div>
-
-    <!-- Col 3 (3 cols): SERVIÇOS -->
-    <div class="lg:col-span-3">
-      <h3 class="font-display font-bold text-sm uppercase tracking-wider text-white mb-3">SERVIÇOS</h3>
-      <ul class="space-y-2 text-xs text-zinc-400">
-        <li><a href="servicos.html#alta-baixa-tensao" class="hover:text-colombo-yellow transition-colors">Instalações de
-            Alta e Baixa Tensão</a></li>
-        <li><a href="servicos.html#cabines-forca" class="hover:text-colombo-yellow transition-colors">Montagem de
-            Cabines de Força</a></li>
-        <li><a href="servicos.html#paineis-eletricos" class="hover:text-colombo-yellow transition-colors">Painéis
-            Elétricos e QGBT</a></li>
-        <li><a href="servicos.html#redes-energia" class="hover:text-colombo-yellow transition-colors">Redes de
-            Energia Aéreas e Subterrâneas</a></li>
-        <li><a href="servicos.html#spda" class="hover:text-colombo-yellow transition-colors">SPDA e Para-raios</a>
-        </li>
-        <li><a href="servicos.html#materiais-laudos" class="hover:text-colombo-yellow transition-colors">Comércio de
-            Materiais Elétricos</a></li>
-      </ul>
-    </div>
-
-    <!-- Col 4 (1.5 cols): RECURSOS -->
-    <div class="lg:col-span-1">
-      <h3 class="font-display font-bold text-sm uppercase tracking-wider text-white mb-3">LINKS</h3>
-      <ul class="space-y-2 text-xs text-zinc-400">
-        <li><a href="obras.html" class="hover:text-colombo-yellow transition-colors">Obras</a></li>
-        <li><a href="empresa.html#seguranca" class="hover:text-colombo-yellow transition-colors">Segurança</a></li>
-        <li><a href="contato.html" class="hover:text-colombo-yellow transition-colors">Orçamento</a></li>
-        <li><a href="https://www.facebook.com/eletricacolombomarilia?locale=pt_BR" target="_blank"
-            rel="noopener noreferrer" class="hover:text-colombo-yellow transition-colors">Facebook</a></li>
-      </ul>
-    </div>
-
-    <!-- Col 5 (3 cols): CONTATO -->
-    <div class="lg:col-span-3">
-      <h3 class="font-display font-bold text-sm uppercase tracking-wider text-white mb-3">CONTATO</h3>
-      <ul class="space-y-2.5 text-xs text-zinc-300">
-        <li class="flex items-center gap-2.5">
-          <svg class="w-4 h-4 text-colombo-yellow shrink-0" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-          </svg>
-          <a href="tel:+551434322962" class="hover:text-colombo-yellow">(14) 3432-2962</a>
-        </li>
-        <li class="flex items-center gap-2.5">
-          <svg class="w-4 h-4 text-colombo-yellow shrink-0" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-          </svg>
-          <a href="mailto:eletricacolombo@terra.com.br"
-            class="hover:text-colombo-yellow break-all">eletricacolombo@terra.com.br</a>
-        </li>
-        <li class="flex items-start gap-2.5">
-          <svg class="w-4 h-4 text-colombo-yellow shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2"
-            viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-          </svg>
-          <span>Avenida Nelson Spielmann, 1655,<br>Bairro: Palmital - CEP 17509-002<br>Marília - SP, Brasil</span>
-        </li>
-      </ul>
-    </div>
-
-    </div>
-
-    <!-- Bottom Copyright Bar -->
-    <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-400">
-      <p>© 2026 Elétrica Colombo (Colombo Projetos Elétricos). Todos os direitos reservados. | Desenvolvido por <a
-          href="http://colombodigital.com.br/" target="_blank" rel="noopener noreferrer"
-          class="text-colombo-yellow hover:underline font-semibold">Colombo Digital</a></p>
-      <div class="flex items-center gap-4">
-        <a href="politica-de-privacidade.html" class="hover:text-white transition">Política de Privacidade</a>
-        <span>|</span>
-        <a href="termos-de-uso.html" class="hover:text-white transition">Termos de Uso</a>
+      <!-- Bottom Copyright Bar -->
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-400">
+        <p>© 2026 Elétrica Colombo (Colombo Projetos Elétricos). Todos os direitos reservados. | Desenvolvido por <a
+            href="http://colombodigital.com.br/" target="_blank" rel="noopener noreferrer"
+            class="text-colombo-yellow hover:underline font-semibold">Colombo Digital</a></p>
+        <div class="flex items-center gap-4">
+          <a href="politica-de-privacidade.html" class="hover:text-white transition">Política de Privacidade</a>
+          <span>|</span>
+          <a href="termos-de-uso.html" class="hover:text-white transition">Termos de Uso</a>
+        </div>
       </div>
-    </div>
 
     </div>
   </footer>
