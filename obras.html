@@ -473,61 +473,65 @@
 
           <div class="lg:col-span-7 flex justify-center">
             <div class="w-full max-w-[420px] bg-colombo-darker p-4 rounded-[3px] border border-zinc-700 shadow-xl">
-              <svg viewBox="0 0 360 270" class="w-full h-auto drop-shadow-xl" fill="none"
+              <svg viewBox="0 0 380 270" class="w-full h-auto drop-shadow-2xl" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
-                <!-- Real IBGE Geographic Boundary of Marília - SP (Município 3529005) -->
+                <!-- Real Geographic Boundary Contour of Marília - SP -->
                 <path
                   d="M196.2 187.6 L200.0 183.9 L202.3 181.2 L205.5 176.0 L207.5 171.9 L209.6 169.2 L211.7 164.5 L214.4 161.8 L211.3 156.4 L212.0 152.7 L213.8 145.3 L211.7 139.4 L210.2 135.6 L209.6 131.1 L208.6 126.6 L204.2 121.6 L206.4 118.5 L211.6 117.4 L215.0 112.1 L217.6 104.5 L220.9 99.3 L224.9 95.1 L231.6 91.9 L236.9 89.1 L242.6 85.5 L247.1 84.4 L242.4 82.8 L238.0 78.6 L232.6 72.5 L228.1 70.0 L224.1 67.6 L219.4 65.6 L212.6 63.7 L208.7 60.5 L205.0 58.0 L200.4 56.4 L196.2 55.1 L191.0 53.9 L187.0 52.7 L183.4 50.8 L179.4 48.8 L175.3 48.4 L170.0 46.2 L166.0 43.8 L160.9 42.1 L160.0 37.2 L156.4 33.8 L155.3 30.0 L150.5 29.0 L145.7 25.2 L141.9 29.6 L137.2 35.8 L135.3 42.1 L137.0 47.9 L140.2 53.5 L143.6 59.6 L143.8 68.0 L147.6 74.4 L150.1 80.3 L151.9 85.1 L157.3 82.3 L163.3 81.6 L160.1 89.7 L159.3 98.4 L153.6 100.4 L152.4 104.3 L149.1 106.9 L146.9 110.9 L146.8 115.4 L149.8 120.6 L149.8 125.6 L147.6 130.1 L146.0 136.8 L142.9 141.6 L140.3 145.8 L134.7 147.5 L130.4 149.8 L126.2 153.4 L120.5 158.1 L115.5 160.5 L113.2 163.2 L116.6 167.6 L121.2 170.3 L120.4 173.2 L120.2 178.1 L118.1 182.1 L115.6 184.3 L117.1 188.2 L121.6 189.9 L126.6 193.7 L129.2 197.6 L126.2 201.7 L124.8 206.3 L121.0 209.9 L120.2 215.6 L125.2 215.8 L128.9 219.1 L130.8 224.2 L133.5 227.9 L138.3 232.8 L140.2 238.6 L141.8 243.1 L145.4 242.7 L149.9 241.2 L154.9 239.2 L152.4 233.2 L153.8 229.3 L155.5 225.5 L159.1 222.0 L163.5 217.6 L167.5 213.3 L174.0 213.1 L178.3 209.6 L175.2 201.7 L174.0 194.5 L172.1 188.9 L174.8 184.6 L180.1 184.8 L183.3 187.5 L186.9 187.1 L192.0 185.9 L195.7 187.3 L196.2 187.6 Z"
                   fill="#363C46" stroke="#4F5864" stroke-width="1.8" />
 
-                <!-- Internal District Division Guides -->
+                <!-- Internal District Division & Highway Axis Guides -->
                 <path d="M185 145 L173 118 M185 145 L204 147 M185 145 L148 87 M185 145 L123 154" stroke="#22272E"
                   stroke-width="1" stroke-dasharray="2 3" />
+                <path d="M100 148 Q185 144 260 142" stroke="#5A6472" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.6" />
 
-                <!-- Pin 1: MARÍLIA - SEDE / PALMITAL (Pulsing Green Halo & Pin) -->
-                <g transform="translate(185, 145)">
-                  <circle cx="0" cy="0" r="16" fill="#009B4D" fill-opacity="0.35" />
-                  <path d="M0 -15 C-6.5 -15 -11 -10 -11 -4 C-11 4 0 13 0 13 C0 13 11 4 11 -4 C11 -10 6.5 -15 0 -15 Z"
-                    fill="#F7B500" />
-                  <circle cx="0" cy="-4" r="3.5" fill="#22272E" />
-                  <rect x="14" y="-12" width="138" height="20" rx="3" fill="#161B22" fill-opacity="0.85" />
-                  <text x="20" y="2" fill="#FFFFFF" font-family="Barlow Condensed, sans-serif" font-weight="700"
-                    font-size="12" letter-spacing="0.5">MARÍLIA (PALMITAL / SEDE)</text>
-                </g>
-
-                <!-- Pin 2: Padre Nóbrega -->
+                <!-- Distritos Estratégicos de Atuação -->
+                <!-- Pin: Padre Nóbrega -->
                 <g transform="translate(173, 118)">
-                  <path d="M0 -9 C-3.5 -9 -6 -6 -6 -2.5 C-6 2 0 7 0 7 C0 7 6 2 6 -2.5 C6 -6 3.5 -9 0 -9 Z"
+                  <path d="M0 -8 C-3 -8 -5 -5.5 -5 -2 C-5 2 0 6 0 6 C0 6 5 2 5 -2 C5 -5.5 3 -8 0 -8 Z"
                     fill="#F7B500" />
-                  <circle cx="0" cy="-2.5" r="2" fill="#22272E" />
-                  <text x="8" y="0" fill="#CBD5E1" font-family="Barlow Condensed, sans-serif" font-weight="600"
+                  <circle cx="0" cy="-2" r="1.8" fill="#22272E" />
+                  <text x="7" y="1" fill="#CBD5E1" font-family="'Barlow Condensed', sans-serif" font-weight="600"
                     font-size="9" letter-spacing="0.3">P. NÓBREGA</text>
                 </g>
 
-                <!-- Pin 3: Lácio -->
-                <g transform="translate(204, 147)">
-                  <path d="M0 -9 C-3.5 -9 -6 -6 -6 -2.5 C-6 2 0 7 0 7 C0 7 6 2 6 -2.5 C6 -6 3.5 -9 0 -9 Z"
-                    fill="#F7B500" />
-                  <circle cx="0" cy="-2.5" r="2" fill="#22272E" />
-                  <text x="8" y="0" fill="#CBD5E1" font-family="Barlow Condensed, sans-serif" font-weight="600"
-                    font-size="9" letter-spacing="0.3">LÁCIO</text>
+                <!-- PIN PRINCIPAL DA SEDE ELÉTRICA COLOMBO (Único no centro, maior e pulsante) -->
+                <g transform="translate(182, 148)">
+                  <!-- Radar Pulsante Verde -->
+                  <circle cx="0" cy="-6" r="22" fill="#009B4D" fill-opacity="0.35" class="animate-ping" style="animation-duration: 2.5s;" />
+                  <circle cx="0" cy="-6" r="10" fill="#009B4D" fill-opacity="0.6" />
+
+                  <!-- Pin Grande Amarelo Ouro e Grafite -->
+                  <path d="M0 -22 C-9 -22 -15 -16 -15 -7 C-15 4 0 15 0 15 C0 15 15 4 15 -7 C15 -16 9 -22 0 -22 Z"
+                    fill="#F7B500" stroke="#161B22" stroke-width="1.8" />
+                  <circle cx="0" cy="-7" r="5" fill="#22272E" />
+                  <circle cx="0" cy="-7" r="2.8" fill="#009B4D" />
+
+                  <!-- Card da Sede limpo e elevado acima/ao lado sem sobreposições -->
+                  <g transform="translate(14, -26)">
+                    <rect x="0" y="0" width="176" height="30" rx="4" fill="#161B22" fill-opacity="0.96" stroke="#009B4D" stroke-width="1.5" />
+                    <text x="10" y="13" fill="#F7B500" font-family="'Barlow Condensed', sans-serif" font-weight="800"
+                      font-size="12" letter-spacing="0.5">SEDE ELÉTRICA COLOMBO</text>
+                    <text x="10" y="23.5" fill="#F1F5F9" font-family="'Inter', sans-serif" font-weight="600"
+                      font-size="8.5">Av. Nelson Spielmann, 1655 • Palmital</text>
+                  </g>
                 </g>
 
                 <!-- Pin 4: Rosália -->
                 <g transform="translate(148, 87)">
-                  <path d="M0 -9 C-3.5 -9 -6 -6 -6 -2.5 C-6 2 0 7 0 7 C0 7 6 2 6 -2.5 C6 -6 3.5 -9 0 -9 Z"
+                  <path d="M0 -8 C-3 -8 -5 -5.5 -5 -2 C-5 2 0 6 0 6 C0 6 5 2 5 -2 C5 -5.5 3 -8 0 -8 Z"
                     fill="#F7B500" />
-                  <circle cx="0" cy="-2.5" r="2" fill="#22272E" />
-                  <text x="8" y="0" fill="#CBD5E1" font-family="Barlow Condensed, sans-serif" font-weight="600"
+                  <circle cx="0" cy="-2" r="1.8" fill="#22272E" />
+                  <text x="7" y="1" fill="#CBD5E1" font-family="'Barlow Condensed', sans-serif" font-weight="600"
                     font-size="9" letter-spacing="0.3">ROSÁLIA</text>
                 </g>
 
                 <!-- Pin 5: Avencas -->
                 <g transform="translate(123, 154)">
-                  <path d="M0 -9 C-3.5 -9 -6 -6 -6 -2.5 C-6 2 0 7 0 7 C0 7 6 2 6 -2.5 C6 -6 3.5 -9 0 -9 Z"
+                  <path d="M0 -8 C-3 -8 -5 -5.5 -5 -2 C-5 2 0 6 0 6 C0 6 5 2 5 -2 C5 -5.5 3 -8 0 -8 Z"
                     fill="#F7B500" />
-                  <circle cx="0" cy="-2.5" r="2" fill="#22272E" />
-                  <text x="-38" y="0" fill="#CBD5E1" font-family="Barlow Condensed, sans-serif" font-weight="600"
+                  <circle cx="0" cy="-2" r="1.8" fill="#22272E" />
+                  <text x="-38" y="1" fill="#CBD5E1" font-family="'Barlow Condensed', sans-serif" font-weight="600"
                     font-size="9" letter-spacing="0.3">AVENCAS</text>
                 </g>
               </svg>
